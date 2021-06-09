@@ -9,7 +9,7 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: const FirebaseOptions(
       // TODO(varun): add firebase auth credentials here
-      projectId: 'wsd-c9257', appId: '1:517676880304:android:1517e6dc3ecc2e773bc675', apiKey: 'AIzaSyBY3sFmlR9u5-QE9vRGMwS89YrL78XWd4E', messagingSenderId: '517676880304',
+      projectId: 'wsd-c9257', appId: '1:517676880304:android:1517e6dc3ecc2e773bc675', apiKey: 'AIzaSyAZp_tCNZIB6DR97NByBoLcwgNnw0TEEqE', messagingSenderId: '517676880304',
       // googleAppID: '1:517676880304:android:1517e6dc3ecc2e773bc675',
       // apiKey: 'AIzaSyAZp_tCNZIB6DR97NByBoLcwgNnw0TEEqE',
       // databaseURL: 'https://wsd-c9257.firebaseio.com',
