@@ -2,13 +2,18 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:realheros_durga/Authentication/Service/authservice.dart';
+import 'package:realheros_durga/Camera/main.dart';
 import 'package:realheros_durga/Chat/Chat.dart';
+import 'package:realheros_durga/General%20emergency/gen_emergency.dart';
+
 import 'package:realheros_durga/Home/Home.dart';
 import 'package:realheros_durga/Maps/maps.dart';
 import 'package:realheros_durga/Maps/safezone.dart';
 import 'package:realheros_durga/Others/About_Us.dart';
 import 'package:realheros_durga/Others/Durga_Info.dart';
 import 'package:realheros_durga/Profile/My_Profile.dart';
+import 'package:realheros_durga/Terms%20and%20Conditions/tcu.dart';
+import 'package:realheros_durga/main.dart';
 
 class AppDrawer extends StatefulWidget {
   final String uid;
@@ -22,6 +27,7 @@ class _AppDrawerState extends State<AppDrawer> {
   String _userName;
   String _userEmail;
   User user;
+
 
   @override
   void initState() {
@@ -37,6 +43,7 @@ class _AppDrawerState extends State<AppDrawer> {
       });
     });
   }
+  
 
   @override
   Widget build(BuildContext context) {
@@ -63,12 +70,12 @@ class _AppDrawerState extends State<AppDrawer> {
         children: <Widget>[
           _createHeader(),
           _createDrawerItem(
-              icon: Icons.home,
-              text: 'Home',
+              icon: Icons.warning_amber,
+              text: 'General Emergency',
               onTap: () => Navigator.push(
                     context,
                     // ignore: missing_required_param
-                    MaterialPageRoute(builder: (context) => new wsd()),
+                    MaterialPageRoute(builder: (context) => new General_emer()),
                   )),
           _createDrawerItem(
               icon: Icons.info_outline,
@@ -89,7 +96,7 @@ class _AppDrawerState extends State<AppDrawer> {
               text: 'Chat',
               onTap: () => Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => new Chats()),
+                    MaterialPageRoute(builder: (context) => new ChannelPage()),
                   )),
           _createDrawerItem(
               icon: Icons.perm_device_information,
@@ -157,6 +164,13 @@ class _AppDrawerState extends State<AppDrawer> {
                   AuthService().signOut();
                 }),
           ),
+          _createDrawerItem(
+              icon: Icons.people,
+              text: 'Terms and Conditions',
+              onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => new Terms()),
+                  )),
         ],
       ),
     ));
